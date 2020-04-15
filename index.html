@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ</title>
+</head>
+
+<body>
+    <br />
+    <p style="text-align:center;font-size: 80px;">invole</p>
+    <!-- <center><button style="width: 300px;height: 100px;">显示答案</button></center> -->
+    <div id="define" style="border-style:solid;left:10%;right:10%;margin: auto;">
+    </div>
+    <div id="define" style="border-style:solid;left:10%;right:10%;margin: auto;" onclick="showans();">
+        <p id="ans" style="text-align:center;font-size: 50px;">显示答案</p>
+        <!-- 中文符號 -->
+    </div>
+    <br>
+    <button style="width: 347px;height: 100px;">未掌握</button>
+    <button style="width: 347px;height: 100px;">基本掌握</button>
+    <button style="width: 347px;height: 100px;">已掌握</button>
+
+    <script>
+        function showans()
+        {
+            document.getElementById("ans").innerText="aaa\naaa";
+        }
+    </script>
+</body>
+
+</html>
