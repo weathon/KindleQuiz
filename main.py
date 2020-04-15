@@ -21,3 +21,7 @@ def main():
     tmp=f.read()
     f.close()
     return tmp
+
+@app.route('/feedback<points>')
+def feedback():
+    return points
