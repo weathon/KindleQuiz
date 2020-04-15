@@ -22,6 +22,6 @@ def main():
     f.close()
     return tmp
 
-@app.route('/feedback<points>')
-def feedback():
+@app.route('/feedback?points=<points>&word=<word>')
+def feedback(points,word):
     return points

@@ -13,7 +13,7 @@
     <div id="define" style="border-style:solid;left:10%;right:10%;margin: auto;">
     </div>
     <div id="define" style="border-style:solid;left:10%;right:10%;margin: auto;" onclick="showans();">
-        <p id="ans" style="text-align:center;font-size: 50px;">显示答案</p>
+        <p id="ans" style="text-align:center;font-size: 50px;">Show Answer</p>
         <!-- 中文符號 -->
     </div>
     <br>
@@ -21,6 +21,7 @@
         <button style="width: 347px;height: 100px;" onclick="next(1)">基本掌握</button>
         <button style="width: 347px;height: 100px;" onclick="next(2)">已掌握</button>
     </div>
+    <p id="ans" style="font-size: 20px;">Energy points gained today:</p>
 
     <script>
         var xhttp = new XMLHttpRequest();
@@ -48,7 +49,9 @@
 
         }
         getword();
+
     </script>
+    
 </body>
 
 </html>
