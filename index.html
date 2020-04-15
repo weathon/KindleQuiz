@@ -21,7 +21,8 @@
         <button style="width: 347px;height: 100px;" onclick="next(1)">基本掌握</button>
         <button style="width: 347px;height: 100px;" onclick="next(2)">已掌握</button>
     </div>
-    <p id="ans" style="font-size: 20px;">Energy points gained today:</p>
+    <span id="ans" style="font-size: 25px;">Energy points gained today: </span><span><b style="font-size: 25px;"
+            id="points"></b></span>
 
     <script>
         var xhttp = new XMLHttpRequest();
@@ -33,7 +34,19 @@
                 answer = t[1];
             }
         };
+        var xhttp_getpoints = new XMLHttpRequest();
+        xhttp_getpoints.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("points").innerText = xhttp_getpoints.responseText;
+            }
+        };
 
+        var xhttp_normal = new XMLHttpRequest();
+
+        function getPoints() {
+            xhttp_getpoints.open("GET", "getpoints", true);
+            xhttp_getpoints.send();
+        }
         function getword() {
             xhttp.open("GET", "getword", true);
             xhttp.send();
@@ -43,15 +56,21 @@
         }
         function next(level) {
             // alert(level);
-        getword();
-        document.getElementById("ans").innerText = "显示答案";
+            // xhttp_normal.open("GET", "feedback?points="+String(level)+"&word=", true); 404
+            xhttp_normal.open("GET", "feedback&"+String(level)+"&test", true); //404
 
-
+            xhttp_normal.send();
+            // xhttp_getpoints,xhttp_normal 太多了
+            getword();
+            document.getElementById("ans").innerText = "Show Answer";
+            getPoints();
         }
         getword();
+        getPoints();
+
 
     </script>
-    
+
 </body>
 
 </html>

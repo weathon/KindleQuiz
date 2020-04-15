@@ -7,6 +7,9 @@ app = Flask(__name__)
 f=open("export.txt","r")
 words=f.read()
 f.close()
+f=open("points.txt","r")
+energypoints=int(f.read())
+f.close()
 
 words_list=words.split("\n\n")
 
@@ -22,6 +25,20 @@ def main():
     f.close()
     return tmp
 
-@app.route('/feedback?points=<points>&word=<word>')
+@app.route('/feedback&<points>&<word>')
 def feedback(points,word):
-    return points
+    global energypoints
+    energypoints+=int(points)
+    print(points)
+    return ""
+
+@app.route("/getpoints")
+def getpoints():
+    f=open("points.txt","w")
+    f.write(energypoints)
+    f.close()
+    return str(energypoints)
+
+
+
+#内存到硬盘的频率？
