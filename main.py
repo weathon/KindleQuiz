@@ -35,7 +35,7 @@ def feedback(points,word):
 @app.route("/getpoints")
 def getpoints():
     f=open("points.txt","w")
-    f.write(energypoints)
+    f.write(str(energypoints))
     f.close()
     return str(energypoints)
 
