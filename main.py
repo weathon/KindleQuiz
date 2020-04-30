@@ -11,6 +11,10 @@ f=open("points.txt","r")
 energypoints=int(f.read())
 f.close()
 
+#If passed, add -1 to the end, means random, if not, add it self
+
+
+
 words_list=words.split("\n\n")
 
 
